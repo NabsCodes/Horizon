@@ -1,5 +1,14 @@
+import { Route, Routes } from "react-router-dom";
+import Homepage from "./components/Homepage";
+
 function App() {
-  return <div className="flex items-center justify-center">Hello World!</div>;
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+      </Routes>
+    </>
+  );
 }
 
 export default App;

@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.open-nav-items {
+  opacity: 1;
+  transition-delay: 300ms;
+}
+
+.close-nav-items {
+  opacity: 0;
+  transition-delay: 100ms;
+}
+
+.backdrop-custom-blur {
+  backdrop-filter: blur(10px);
+}
+
+/* .backdrop-custom-blur > * {
+  background-color: rgba(255, 255, 255, 0.65);
+} */
