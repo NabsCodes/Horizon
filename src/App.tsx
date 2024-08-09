@@ -1,13 +1,11 @@
-import { Route, Routes } from "react-router-dom";
 import Homepage from "./components/Homepage";
+import Layout from "./components/Layout";
 
 function App() {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-      </Routes>
-    </>
+    <Layout>
+      <Homepage />
+    </Layout>
   );
 }
 

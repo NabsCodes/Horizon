@@ -18,10 +18,8 @@ export default {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
       },
-    },
-    variants: {
-      extend: {
-        backdropBlur: ["responsive"],
+      colors: {
+        "custom-purple": "#8B5CF6",
       },
     },
   },

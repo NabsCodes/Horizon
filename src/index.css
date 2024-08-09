@@ -2,20 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.open-nav-items {
-  opacity: 1;
-  transition-delay: 300ms;
+.btn-base {
+  @apply rounded-[10px] border border-[#8D4DD1] bg-custom-gradient px-5 py-2.5 font-normal text-white shadow-custom-shadow transition-all duration-300 ease-custom-bezier hover:bg-inverse-gradient;
 }
 
-.close-nav-items {
-  opacity: 0;
-  transition-delay: 100ms;
+.btn-text {
+  @apply text-[15px] font-[500] leading-[155%] tracking-[0.02em];
 }
 
-.backdrop-custom-blur {
-  backdrop-filter: blur(10px);
+.btn-icon {
+  @apply h-6 w-6;
 }
-
-/* .backdrop-custom-blur > * {
-  background-color: rgba(255, 255, 255, 0.65);
-} */

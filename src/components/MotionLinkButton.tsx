@@ -25,20 +25,16 @@ const MotionLinkButton: React.FC<MotionLinkButtonProps> = ({
       to={to}
       target={target}
       aria-label={ariaLabel}
-      className={`group rounded-[10px] border border-[#8D4DD1] bg-custom-gradient px-5 py-2.5 font-normal text-white shadow-custom-shadow transition-all duration-300 ease-custom-bezier hover:bg-inverse-gradient ${linkClassName}`}
+      className={`btn-base group ${linkClassName}`}
     >
       <div className="flex flex-row items-center justify-center space-x-2">
-        <span
-          className={`text-[15px] font-[500] leading-[155%] tracking-[0.02em] ${spanClassName}`}
-        >
-          {children}
-        </span>
+        <span className={`btn-text ${spanClassName}`}>{children}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 256 256"
           focusable="false"
           color="inherit"
-          className={`h-6 w-6 ${svgClassName}`}
+          className={`btn-icon ${svgClassName}`}
           fill="currentColor"
         >
           <g color="inherit">
