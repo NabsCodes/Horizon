@@ -1,55 +1,53 @@
-import logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import MotionLinkButton from "./MotionLinkButton";
+import PrimaryLinkButton from "./ui/PrimaryLinkButton";
+import HorizonLink from "./ui/HorizonLink";
+import { useMenuContext } from "../context/MenuContext";
 
 const Footer = () => {
+  const { handleScroll } = useMenuContext();
   return (
     <motion.footer
-      className="absolute bottom-0 flex w-full items-center justify-center bg-white/80 px-10 py-8 backdrop-blur-sm"
+      className="absolute z-40 flex w-full flex-col items-center justify-between gap-[40px] bg-white/80 px-10 py-8 backdrop-blur-sm md:flex-row md:px-[20px] lg:gap-[20px] lg:px-[80px] xl:gap-[40px]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="flex flex-col items-center justify-center gap-[40px] lg:flex-row lg:gap-3">
-        <div className="flex items-center justify-center gap-1.5">
-          <img src={logo} alt="horizon logo" className="h-[36px] w-[36px]" />
-          <h1 className="text-[22px] font-medium tracking-[0.02em]">Horizon</h1>
-        </div>
-
-        <div className="flex flex-col items-center justify-center gap-4">
-          <p className="text-center text-[16px] text-gray-500">
-            Designed by{" "}
-            <Link
-              to="https://andrea-montini.lemonsqueezy.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-custom-purple font-medium hover:underline"
-            >
-              Andrea Montini
-            </Link>{" "}
-            • Developed by{" "}
-            <Link
-              to="https://github.com/NabsCodes"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-custom-purple font-medium hover:underline"
-            >
-              Hassan Umar Hassan
-            </Link>{" "}
-            • All rights reserved | Copyright © {new Date().getFullYear()}
-          </p>
-        </div>
-
-        <MotionLinkButton
-          to="https://andrea-montini.lemonsqueezy.com/"
-          target="_blank"
-          ariaLabel="Get this template"
-          svgClassName="group-hover:translate-x-1 transition-transform duration-300 ease-custom-bezier"
-        >
-          Get this template
-        </MotionLinkButton>
+      <HorizonLink handleScroll={handleScroll} />
+      <div className="flex flex-col items-center justify-center gap-4">
+        <p className="text-center text-[14px] text-gray-500">
+          Design by{" "}
+          <Link
+            to="https://andrea-montini.lemonsqueezy.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-custom-purple hover:underline"
+          >
+            Andrea Montini
+          </Link>{" "}
+          • Developed by{" "}
+          <Link
+            to="https://github.com/NabsCodes"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-custom-purple hover:underline"
+          >
+            H. U. Hassan
+          </Link>{" "}
+          • © {new Date().getFullYear()}
+        </p>
       </div>
+
+      <PrimaryLinkButton
+        to="https://andrea-montini.lemonsqueezy.com/"
+        target="_blank"
+        ariaLabel="Get this template"
+        linkClassName="md:space-x-0 lg:space-x-2"
+        spanClassName="md:hidden lg:block"
+        svgClassName="group-hover:translate-x-1 transition-transform duration-300 ease-custom-bezier"
+      >
+        Get this template
+      </PrimaryLinkButton>
     </motion.footer>
   );
 };

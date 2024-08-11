@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-interface MotionLinkButtonProps {
+interface SecondaryLinkButtonProps {
   to: string;
   target?: string;
   ariaLabel: string;
@@ -11,7 +11,7 @@ interface MotionLinkButtonProps {
   children: React.ReactNode;
 }
 
-const MotionLinkButton: React.FC<MotionLinkButtonProps> = ({
+const SecondaryLinkButton: React.FC<SecondaryLinkButtonProps> = ({
   to,
   target,
   ariaLabel,
@@ -25,16 +25,22 @@ const MotionLinkButton: React.FC<MotionLinkButtonProps> = ({
       to={to}
       target={target}
       aria-label={ariaLabel}
-      className={`btn-base group ${linkClassName}`}
+      className={`group rounded-[10px] border border-gray-200 bg-secondary-gradient px-5 py-2.5 font-normal text-[#030712] shadow-secondary-shadow transition-all duration-300 ease-custom-bezier hover:border-gray-300 hover:bg-inverse-secondary-gradient ${linkClassName}`}
     >
-      <div className="flex flex-row items-center justify-center space-x-2">
-        <span className={`btn-text ${spanClassName}`}>{children}</span>
+      <div
+        className={`flex flex-row items-center justify-center space-x-2 ${linkClassName}`}
+      >
+        <span
+          className={`text-[15px] font-[500] leading-[155%] tracking-[0.02em] ${spanClassName}`}
+        >
+          {children}
+        </span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 256 256"
           focusable="false"
           color="inherit"
-          className={`btn-icon ${svgClassName}`}
+          className={`h-6 w-6 ${svgClassName}`}
           fill="currentColor"
         >
           <g color="inherit">
@@ -46,4 +52,4 @@ const MotionLinkButton: React.FC<MotionLinkButtonProps> = ({
   );
 };
 
-export default MotionLinkButton;
+export default SecondaryLinkButton;

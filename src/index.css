@@ -1,15 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.btn-base {
-  @apply rounded-[10px] border border-[#8D4DD1] bg-custom-gradient px-5 py-2.5 font-normal text-white shadow-custom-shadow transition-all duration-300 ease-custom-bezier hover:bg-inverse-gradient;
-}
-
-.btn-text {
-  @apply text-[15px] font-[500] leading-[155%] tracking-[0.02em];
-}
-
-.btn-icon {
-  @apply h-6 w-6;
-}

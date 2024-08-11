@@ -1,8 +1,8 @@
-import logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import MotionLinkButton from "./MotionLinkButton";
+import PrimaryLinkButton from "./ui/PrimaryLinkButton";
 import { useMenuContext } from "../context/MenuContext";
+import HorizonLink from "./ui/HorizonLink";
 
 type NavLink = {
   id: number;
@@ -26,11 +26,7 @@ const Navbar = () => {
       className={`fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur-sm ${isMenuOpen ? "h-[400px]" : "md:h-[88px]"} transition-all duration-300 ease-custom-bezier`}
     >
       <nav className="flex w-full items-center justify-between px-[20px] py-[20.5px] lg:px-[80px]">
-        <Link to={"/"} className="flex items-center justify-center gap-1.5">
-          <img src={logo} alt="Horizon Logo" className="h-[36px] w-[36px]" />
-          <h1 className="text-[22px] font-medium tracking-[0.02em]">Horizon</h1>
-        </Link>
-
+        <HorizonLink handleScroll={handleScroll} />
         <div className="hidden items-center text-[#4b5563] md:flex md:gap-4 lg:gap-6">
           {navLinks.map((link: NavLink) => (
             <Link
@@ -44,15 +40,15 @@ const Navbar = () => {
           ))}
         </div>
 
-        <MotionLinkButton
+        <PrimaryLinkButton
           to="https://andrea-montini.lemonsqueezy.com/"
           target="_blank"
           ariaLabel="Get this template"
-          linkClassName="hidden md:flex"
-          spanClassName="transition-transform duration-300 ease-custom-bezier group-hover:-translate-x-2"
+          linkClassName="hidden md:flex md:space-x-0 lg:space-x-2"
+          spanClassName="md:hidden lg:block transition-transform duration-300 ease-custom-bezier group-hover:-translate-x-1"
         >
           Get this Template
-        </MotionLinkButton>
+        </PrimaryLinkButton>
 
         {isMenuOpen ? (
           <svg
@@ -98,7 +94,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -100 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="absolute left-0 top-[77px] z-50 flex w-full flex-col items-center justify-between gap-5 p-6 text-[#4b5563] shadow-custom-shadow md:hidden"
+            className="shadow-custom-shadow absolute left-0 top-[77px] z-50 flex w-full flex-col items-center justify-between gap-5 p-6 text-[#4b5563] md:hidden"
           >
             <div className="flex max-w-max flex-col items-center justify-center gap-5">
               {navLinks.map((link: NavLink) => (
@@ -113,7 +109,7 @@ const Navbar = () => {
               ))}
             </div>
 
-            <MotionLinkButton
+            <PrimaryLinkButton
               to="https://andrea-montini.lemonsqueezy.com/"
               target="_blank"
               ariaLabel="Get this template"
@@ -122,7 +118,7 @@ const Navbar = () => {
               svgClassName="group-hover:translate-x-1 transition-transform duration-300 ease-custom-bezier"
             >
               Get this Template
-            </MotionLinkButton>
+            </PrimaryLinkButton>
           </motion.div>
         )}
       </nav>
