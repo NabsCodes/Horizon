@@ -45,7 +45,7 @@ const Navbar = () => {
           target="_blank"
           ariaLabel="Get this template"
           linkClassName="hidden md:flex md:space-x-0 lg:space-x-2"
-          spanClassName="md:hidden lg:block transition-transform duration-300 ease-custom-bezier group-hover:-translate-x-1"
+          svgClassName="md:hidden lg:block transition-transform duration-300 ease-custom-bezier group-hover:translate-x-1"
         >
           Get this Template
         </PrimaryLinkButton>

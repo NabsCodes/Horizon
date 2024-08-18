@@ -23,12 +23,12 @@ const LogoItem = ({ src, alt }: { src: string; alt: string }) => {
 
 const StartupCarousel = () => {
   return (
-    <div className="z-10 flex w-full flex-col items-center justify-center gap-[10px] px-[20px] sm:px-[60px] xl:mt-[60px]">
-      <p className="text-[17px] font-[500] leading-[140%] tracking-[0em] text-gray-700">
+    <div className="z-10 flex w-full flex-col items-center justify-center gap-[20px] px-[20px] sm:px-[60px]">
+      <p className="text-center text-[17px] font-[500] leading-[140%] tracking-[0em] text-gray-700">
         Already trusted by industry leaders
       </p>
       <div className="relative h-[107px] w-full overflow-hidden">
-        <div className="mask-custom-gradient relative flex h-full w-full list-none place-items-center p-[10px] opacity-100">
+        <div className="relative flex h-full w-full list-none place-items-center p-[10px] opacity-100 mask-custom-gradient">
           <Marquee gradient={false} pauseOnHover={true} speed={100}>
             <ul className="flex h-full max-h-full w-full list-none flex-row place-items-center gap-[120px] last:pr-[120px]">
               {logos.concat(logos).map((logo, index) => (
