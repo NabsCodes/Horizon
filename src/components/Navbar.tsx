@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import PrimaryLinkButton from "./ui/PrimaryLinkButton";
 import { useMenuContext } from "../context/MenuContext";
 import HorizonLink from "./ui/HorizonLink";
+import { CloseIcon, MenuIcon } from "./SvgIcons";
 
 type NavLink = {
   id: number;
@@ -25,7 +26,7 @@ const Navbar = () => {
     <motion.header
       className={`fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur-sm ${isMenuOpen ? "h-[400px]" : "md:h-[88px]"} transition-all duration-300 ease-custom-bezier`}
     >
-      <nav className="flex w-full items-center justify-between px-[20px] py-[20.5px] lg:px-[80px]">
+      <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-[20.5px] sm:px-6 lg:px-8">
         <HorizonLink handleScroll={handleScroll} />
         <div className="hidden items-center text-[#4b5563] md:flex md:gap-4 lg:gap-6">
           {navLinks.map((link: NavLink) => (
@@ -51,41 +52,9 @@ const Navbar = () => {
         </PrimaryLinkButton>
 
         {isMenuOpen ? (
-          <svg
-            width="100%"
-            height="1.5em"
-            strokeWidth="1.5"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            color="rgb(0, 0, 0)"
-            className="h-8 w-8 cursor-pointer md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <path
-              d="M6.758 17.243L12.001 12m5.243-5.243L12 12m0 0L6.758 6.757M12.001 12l5.243 5.243"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            ></path>
-          </svg>
+          <CloseIcon onClick={() => setIsMenuOpen(!isMenuOpen)} />
         ) : (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-            color="rgb(0, 0, 0)"
-            className="h-8 w-8 cursor-pointer md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4 6h16M4 12h16m-7 6h7"
-            />
-          </svg>
+          <MenuIcon onClick={() => setIsMenuOpen(!isMenuOpen)} />
         )}
 
         {isMenuOpen && (
