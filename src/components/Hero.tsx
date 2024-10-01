@@ -27,7 +27,7 @@ const Hero = () => {
             className="absolute top-[300px] h-[400px] w-full object-cover sm:h-[500px] md:hidden md:h-[600px] lg:opacity-[0.6]"
           />
         </div>
-        <div className="relative mx-auto max-w-7xl">
+        <div className="relative mx-auto max-w-8xl">
           <div className="grid grid-cols-1 items-center gap-x-[5px] gap-y-2 pt-10 sm:gap-y-6 md:mt-8 lg:mb-[40px] lg:grid-cols-12 lg:pt-0">
             <div className="flex overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-6">
               <div className="flex flex-col justify-center gap-[24px] lg:px-[40px] xl:px-[60px]">

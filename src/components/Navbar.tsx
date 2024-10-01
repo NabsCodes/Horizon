@@ -26,7 +26,7 @@ const Navbar = () => {
     <motion.header
       className={`fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur-sm ${isMenuOpen ? "h-[400px]" : "md:h-[88px]"} transition-all duration-300 ease-custom-bezier`}
     >
-      <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-[20.5px] sm:px-6 lg:px-8">
+      <nav className="mx-auto flex w-full max-w-8xl items-center justify-between px-4 py-[20.5px] sm:px-6 lg:px-8">
         <HorizonLink handleScroll={handleScroll} />
         <div className="hidden items-center text-[#4b5563] md:flex md:gap-4 lg:gap-6">
           {navLinks.map((link: NavLink) => (

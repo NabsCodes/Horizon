@@ -4,7 +4,10 @@ import PrimaryLinkButton from "./ui/PrimaryLinkButton";
 
 const Features = () => {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-[80px] sm:px-6 lg:px-8">
+    <section
+      id="features"
+      className="mx-auto max-w-8xl px-4 py-[80px] sm:px-6 lg:px-8"
+    >
       <div className="mx-auto flex max-w-[840px] flex-col justify-center">
         <h2 className="text-center text-[46px] font-[600] leading-[110%] tracking-[-1.5px] text-black">
           Trend detection applied <br />

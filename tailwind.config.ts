@@ -25,6 +25,10 @@ export default {
         "secondary-shadow":
           "rgba(17, 3, 48, 0.07) 0px 2px 6px 0px, rgba(0, 0, 0, 0.03) 0px 1px 1px 0px",
       },
+      maxWidth: {
+        "8xl": "90rem",
+        "9xl": "96rem",
+      },
       transitionTimingFunction: {
         "custom-bezier": "cubic-bezier(.44,0,.56,1)",
       },
@@ -38,6 +42,8 @@ export default {
       maskImage: {
         "custom-gradient":
           "linear-gradient(to right, rgba(0, 0, 0, 0) 5%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 95%)",
+        "custom-gradient-vertical":
+          "linear-gradient(to bottom, rgba(0, 0, 0, 0) 5%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 95%)",
       },
     },
   },
@@ -47,6 +53,10 @@ export default {
         ".mask-custom-gradient": {
           maskImage:
             "linear-gradient(to right, rgba(0, 0, 0, 0) 5%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 95%)",
+        },
+        ".mask-custom-gradient-vertical": {
+          maskImage:
+            "linear-gradient(to bottom, rgba(0, 0, 0, 0) 5%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 95%)",
         },
       };
       addUtilities(newUtilities, ["responsive", "hover"]);

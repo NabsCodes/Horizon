@@ -8,7 +8,7 @@ const Footer = () => {
   const { handleScroll } = useMenuContext();
   return (
     <motion.footer
-      className="z-40 mx-auto flex max-w-7xl flex-col items-center justify-between gap-[40px] px-4 py-8 backdrop-blur-sm sm:px-6 md:flex-row lg:gap-[20px] lg:px-8 xl:gap-[40px]"
+      className="max-w-8xl z-40 mx-auto flex flex-col items-center justify-between gap-[40px] px-4 py-8 backdrop-blur-sm sm:px-6 md:flex-row lg:gap-[20px] lg:px-8 xl:gap-[40px]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}

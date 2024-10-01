@@ -13,7 +13,6 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:@typescript-eslint/recommended",
-    // "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:prettier/recommended",
   ],
   parser: "@typescript-eslint/parser",
@@ -22,12 +21,12 @@ module.exports = {
     sourceType: "module",
     project: ["./tsconfig.json", "./tsconfig.node.json", "./tsconfig.app.json"],
     tsconfigRootDir: __dirname,
+    extraFileExtensions: [".html"],
   },
   settings: {
     react: { version: "detect" },
     "import/parsers": { "@typescript-eslint/parser": [".ts", ".tsx"] },
     "import/resolver": {
-      // typescript: { alwaysTryTypes: true },
       node: { extensions: [".js", ".jsx", ".ts", ".tsx"] },
     },
   },
@@ -37,8 +36,8 @@ module.exports = {
     "react-hooks",
     "jsx-a11y",
     "import",
-    "prettier",
     "@typescript-eslint",
+    "prettier",
   ],
   rules: {
     "react-refresh/only-export-components": "warn",
@@ -47,8 +46,14 @@ module.exports = {
     "react/jsx-uses-react": "off",
     "react/jsx-uses-vars": "off",
     "no-unused-vars": "off",
+    "import/no-unresolved": "off",
     "@typescript-eslint/no-unused-vars": ["warn"],
     "@typescript-eslint/explicit-module-boundary-types": "off",
   },
-  ignorePatterns: ["dist", ".eslintrc.cjs"],
+  ignorePatterns: [
+    "postcss.config.js",
+    "tailwind.config.ts",
+    "*.html",
+    ".eslintrc.cjs",
+  ],
 };

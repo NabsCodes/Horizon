@@ -1,6 +1,8 @@
 import Features from "./Features";
 import Hero from "./Hero";
-
+import UseCase from "./UseCase";
+import UseCaseFeatures from "./UseCaseFeatures";
+import Integrations from "./Integrations";
 function Homepage() {
   return (
     <main
@@ -9,6 +11,9 @@ function Homepage() {
     >
       <Hero />
       <Features />
+      <UseCase />
+      <UseCaseFeatures />
+      <Integrations />
     </main>
   );
 }
