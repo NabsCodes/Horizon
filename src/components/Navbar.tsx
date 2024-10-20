@@ -1,9 +1,11 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence, easeInOut } from "framer-motion";
 import PrimaryLinkButton from "./ui/PrimaryLinkButton";
 import { useMenuContext } from "../context/MenuContext";
 import HorizonLink from "./ui/HorizonLink";
 import { CloseIcon, MenuIcon } from "./SvgIcons";
+import useClickOutside from "@/hooks/useClickOutside";
 
 type NavLink = {
   id: number;
@@ -21,6 +23,12 @@ const navLinks: NavLink[] = [
 
 const Navbar = () => {
   const { isMenuOpen, setIsMenuOpen, handleScroll } = useMenuContext();
+  const menuRef = useRef<HTMLDivElement>(null); // Ref for the menu
+
+  // Close the menu when the user clicks outside of it
+  useClickOutside(menuRef, () => {
+    if (isMenuOpen) setIsMenuOpen(false);
+  });
 
   return (
     <header
@@ -60,6 +68,7 @@ const Navbar = () => {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
+              ref={menuRef}
               initial={{ opacity: 0, y: -100 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -100 }}

@@ -33,7 +33,7 @@ const Features = () => {
               damping: 40,
               stiffness: 160,
               mass: 1,
-              delay: 1.5,
+              delay: 0.8,
             },
           }}
           viewport={{
@@ -144,7 +144,7 @@ const Features = () => {
               damping: 40,
               stiffness: 160,
               mass: 1,
-              delay: 1.5,
+              delay: 0.8,
             },
           }}
           viewport={{
@@ -161,30 +161,6 @@ const Features = () => {
       </div>
       {/* Primary CTA */}
       <div className="mt-[100px] grid grid-cols-1 gap-[80px] lg:grid-cols-2">
-        <motion.img
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            transition: {
-              type: "spring",
-              damping: 40,
-              stiffness: 160,
-              mass: 1,
-              delay: 1.5,
-            },
-          }}
-          viewport={{
-            amount: "some",
-            once: true,
-          }}
-          decoding="async"
-          sizes="min(100vw - 80px, 800px)"
-          srcSet="hhttps://framerusercontent.com/images/4aRXowVrrTMR3AIzJTT1G62ydk.jpg?scale-down-to=1024 985w,https://framerusercontent.com/images/4aRXowVrrTMR3AIzJTT1G62ydk.jpg 1110w"
-          src="https://framerusercontent.com/images/4aRXowVrrTMR3AIzJTT1G62ydk.jpg"
-          alt="Feature view"
-          className="w-full"
-        />
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{
@@ -230,6 +206,31 @@ const Features = () => {
             />
           </div>
         </motion.div>
+
+        <motion.img
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: "spring",
+              damping: 40,
+              stiffness: 160,
+              mass: 1,
+              delay: 0.8,
+            },
+          }}
+          viewport={{
+            amount: "some",
+            once: true,
+          }}
+          decoding="async"
+          sizes="min(100vw - 80px, 800px)"
+          srcSet="hhttps://framerusercontent.com/images/4aRXowVrrTMR3AIzJTT1G62ydk.jpg?scale-down-to=1024 985w,https://framerusercontent.com/images/4aRXowVrrTMR3AIzJTT1G62ydk.jpg 1110w"
+          src="https://framerusercontent.com/images/4aRXowVrrTMR3AIzJTT1G62ydk.jpg"
+          alt="Feature view"
+          className="order-last w-full lg:order-none"
+        />
       </div>
     </section>
   );
