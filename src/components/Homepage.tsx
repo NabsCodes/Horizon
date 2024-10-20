@@ -3,6 +3,10 @@ import Hero from "./Hero";
 import UseCase from "./UseCase";
 import UseCaseFeatures from "./UseCaseFeatures";
 import Integrations from "./Integrations";
+import Pricing from "./Pricing";
+import Blog from "./Blog";
+import Cta from "./Cta";
+
 function Homepage() {
   return (
     <main
@@ -14,6 +18,9 @@ function Homepage() {
       <UseCase />
       <UseCaseFeatures />
       <Integrations />
+      <Pricing />
+      <Blog />
+      <Cta />
     </main>
   );
 }

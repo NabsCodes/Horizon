@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence, easeInOut } from "framer-motion";
 import PrimaryLinkButton from "./ui/PrimaryLinkButton";
 import { useMenuContext } from "../context/MenuContext";
 import HorizonLink from "./ui/HorizonLink";
@@ -23,7 +23,7 @@ const Navbar = () => {
   const { isMenuOpen, setIsMenuOpen, handleScroll } = useMenuContext();
 
   return (
-    <motion.header
+    <header
       className={`fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur-sm ${isMenuOpen ? "h-[400px]" : "md:h-[88px]"} transition-all duration-300 ease-custom-bezier`}
     >
       <nav className="mx-auto flex w-full max-w-8xl items-center justify-between px-4 py-[20.5px] sm:px-6 lg:px-8">
@@ -42,7 +42,7 @@ const Navbar = () => {
         </div>
 
         <PrimaryLinkButton
-          to="https://andrea-montini.lemonsqueezy.com/"
+          to="https://github.com/NabsCodes"
           target="_blank"
           ariaLabel="Get this template"
           linkClassName="hidden md:flex md:space-x-0 lg:space-x-2"
@@ -57,41 +57,43 @@ const Navbar = () => {
           <MenuIcon onClick={() => setIsMenuOpen(!isMenuOpen)} />
         )}
 
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -100 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="shadow-custom-shadow absolute left-0 top-[77px] z-50 flex w-full flex-col items-center justify-between gap-5 p-6 text-[#4b5563] md:hidden"
-          >
-            <div className="flex max-w-max flex-col items-center justify-center gap-5">
-              {navLinks.map((link: NavLink) => (
-                <Link
-                  key={link.id}
-                  to={link.href}
-                  onClick={handleScroll}
-                  className="cursor-pointer text-[16px] font-normal transition-colors duration-300 ease-custom-bezier hover:text-[#000]"
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-
-            <PrimaryLinkButton
-              to="https://andrea-montini.lemonsqueezy.com/"
-              target="_blank"
-              ariaLabel="Get this template"
-              linkClassName="w-full md:hidden"
-              spanClassName="transition-transform duration-300 ease-custom-bezier group-hover:-translate-x-1"
-              svgClassName="group-hover:translate-x-1 transition-transform duration-300 ease-custom-bezier"
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -100 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -100 }}
+              transition={{ duration: 0.5, ease: easeInOut }}
+              className="shadow-custom-shadow absolute left-0 top-[77px] z-50 flex w-full flex-col items-center justify-between gap-5 p-6 text-[#4b5563] md:hidden"
             >
-              Get this Template
-            </PrimaryLinkButton>
-          </motion.div>
-        )}
+              <div className="flex max-w-max flex-col items-center justify-center gap-5">
+                {navLinks.map((link: NavLink) => (
+                  <Link
+                    key={link.id}
+                    to={link.href}
+                    onClick={handleScroll}
+                    className="cursor-pointer text-[16px] font-normal transition-colors duration-300 ease-custom-bezier hover:text-[#000]"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+
+              <PrimaryLinkButton
+                to="https://github.com/NabsCodes"
+                target="_blank"
+                ariaLabel="Get this template"
+                linkClassName="w-full md:hidden"
+                spanClassName="transition-transform duration-300 ease-custom-bezier group-hover:-translate-x-1"
+                svgClassName="group-hover:translate-x-1 transition-transform duration-300 ease-custom-bezier"
+              >
+                Get this Template
+              </PrimaryLinkButton>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
-    </motion.header>
+    </header>
   );
 };
 

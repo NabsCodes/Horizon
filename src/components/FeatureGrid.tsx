@@ -4,7 +4,7 @@ import { features } from "@/utils/data";
 
 const FeatureGrid: React.FC = () => {
   return (
-    <div className="mx-auto w-full max-w-7xl px-4 py-8">
+    <div className="mx-auto w-full max-w-7xl py-8 sm:px-4">
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
         {features.map((feature, index) => (
           <FeatureCard

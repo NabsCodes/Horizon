@@ -45,6 +45,21 @@ export default {
         "custom-gradient-vertical":
           "linear-gradient(to bottom, rgba(0, 0, 0, 0) 5%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 95%)",
       },
+      keyframes: {
+        rotate360: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        borderSpin: {
+          "100%": {
+            transform: "rotate(360deg)",
+          },
+        },
+      },
+      animation: {
+        rotate360: "rotate360 10s linear infinite",
+        borderSpin: "borderSpin 7s linear infinite",
+      },
     },
   },
   plugins: [

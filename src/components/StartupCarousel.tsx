@@ -4,6 +4,7 @@ import bitfinex from "../assets/bitfinex.png";
 import coinbase from "../assets/coinbase.png";
 import kraken from "../assets/kraken.png";
 import bitget from "../assets/bitget.png";
+import { motion } from "framer-motion";
 
 const logos = [
   { src: binance, alt: "Binance" },
@@ -23,7 +24,13 @@ const LogoItem = ({ src, alt }: { src: string; alt: string }) => {
 
 const StartupCarousel = () => {
   return (
-    <div className="z-10 flex w-full flex-col items-center justify-center gap-[20px] px-[20px] sm:px-[60px]">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ amount: "some", once: true }}
+      transition={{ duration: 0.8, delay: 0.4, ease: "easeInOut" }}
+      className="z-10 flex w-full flex-col items-center justify-center gap-[20px] px-[20px] sm:px-[60px]"
+    >
       <p className="text-center text-[17px] font-[500] leading-[140%] tracking-[0em] text-gray-700">
         Already trusted by industry leaders
       </p>
@@ -38,7 +45,7 @@ const StartupCarousel = () => {
           </Marquee>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

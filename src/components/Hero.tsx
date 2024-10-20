@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { motion } from "framer-motion";
+import { easeInOut, motion } from "framer-motion";
 import hero_gradient from "../assets/hero_gradient.png";
 import pattern_dotted from "../assets/pattern_dotted.png";
 import StartupCarousel from "./StartupCarousel";
@@ -9,7 +9,7 @@ import Badge from "./ui/Badge";
 
 const Hero = () => {
   return (
-    <div>
+    <>
       <section
         id="hero"
         aria-label="Hero"
@@ -31,19 +31,83 @@ const Hero = () => {
           <div className="grid grid-cols-1 items-center gap-x-[5px] gap-y-2 pt-10 sm:gap-y-6 md:mt-8 lg:mb-[40px] lg:grid-cols-12 lg:pt-0">
             <div className="flex overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-6">
               <div className="flex flex-col justify-center gap-[24px] lg:px-[40px] xl:px-[60px]">
-                <Badge text="Coming in Beta" className="mx-auto md:mx-0" />
-                <h1 className="text-center text-[45px] font-[600] leading-[105%] tracking-[-2px] text-black md:text-left md:text-[48px] lg:text-[56px] xl:text-[64px] 2xl:text-[70px]">
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 0.8,
+                      ease: [0.44, 0, 0, 1],
+                    },
+                  }}
+                  viewport={{
+                    amount: "some",
+                    once: true,
+                  }}
+                >
+                  <Badge text="Coming in Beta" className="mx-auto md:mx-0" />
+                </motion.div>
+                <motion.h1
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 0.8,
+                      ease: easeInOut,
+                    },
+                  }}
+                  viewport={{
+                    amount: "some",
+                    once: true,
+                  }}
+                  className="text-center text-[45px] font-[600] leading-[105%] tracking-[-2px] text-black md:text-left md:text-[48px] lg:text-[56px] xl:text-[64px] 2xl:text-[70px]"
+                >
                   <span className="text-violet-500">Insightful trends</span> to
                   discover real opportunities
-                </h1>
-                <p className="text-center text-gray-700 md:text-left">
+                </motion.h1>
+                <motion.p
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 0.8,
+                      ease: [0.44, 0, 0, 1],
+                    },
+                  }}
+                  viewport={{
+                    amount: "some",
+                    once: true,
+                  }}
+                  className="text-center text-lg text-gray-700 md:text-left"
+                >
                   Step into a new era of strategic decision-making. Horizon
                   empowers businesses in the marketing space with unparalleled
                   data analytics.
-                </p>
-                <div className="flex flex-col items-center justify-center gap-4 md:flex-row lg:max-w-[350px]">
+                </motion.p>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      type: "spring",
+                      damping: 100,
+                      stiffness: 300,
+                      mass: 1,
+                      delay: 0.3,
+                    },
+                  }}
+                  viewport={{
+                    amount: "some",
+                    once: true,
+                  }}
+                  className="flex flex-col items-center justify-center gap-4 md:flex-row lg:max-w-[350px]"
+                >
                   <SecondaryLinkButton
-                    to="https://andrea-montini.lemonsqueezy.com/"
+                    to="https://github.com/NabsCodes"
                     target="_blank"
                     ariaLabel="Discover more"
                     linkClassName="w-full"
@@ -53,7 +117,7 @@ const Hero = () => {
                     Discover more
                   </SecondaryLinkButton>
                   <PrimaryLinkButton
-                    to="https://andrea-montini.lemonsqueezy.com/"
+                    to="https://github.com/NabsCodes"
                     target="_blank"
                     ariaLabel="Get early access"
                     linkClassName="w-full"
@@ -62,15 +126,28 @@ const Hero = () => {
                   >
                     Get early access
                   </PrimaryLinkButton>
-                </div>
+                </motion.div>
               </div>
             </div>
             <div className="lg:col-span-6">
-              <div className="w-auto overflow-hidden rounded-[20px] bg-slate-50 ring-1 ring-gray-400/10 lg:mt-0 lg:w-[65rem]">
+              <div className="w-auto overflow-hidden rounded-[20px] lg:mt-0 lg:w-[65rem]">
                 <motion.img
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      type: "spring",
+                      damping: 100,
+                      stiffness: 300,
+                      mass: 1,
+                      delay: 0.3,
+                    },
+                  }}
+                  viewport={{
+                    amount: "some",
+                    once: true,
+                  }}
                   decoding="async"
                   sizes="1015px"
                   width={3045}
@@ -87,7 +164,7 @@ const Hero = () => {
         </div>
         <StartupCarousel />
       </section>
-    </div>
+    </>
   );
 };
 

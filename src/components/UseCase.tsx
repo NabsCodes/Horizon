@@ -1,6 +1,7 @@
 import React from "react";
 import Badge from "./ui/Badge";
 import TestimonialCard from "./TestimonialCard";
+import { motion } from "framer-motion";
 
 // Import images
 import avatarIntercom from "../assets/avatar.png";
@@ -49,7 +50,23 @@ const UseCase: React.FC = () => {
           ))}
         </div>
         <div className="mt-[100px] grid grid-cols-1 gap-[80px] lg:grid-cols-2">
-          <div className="mx-auto flex flex-col justify-center gap-[24px] xl:max-w-[550px]">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 0.8,
+                delay: 0.4,
+                ease: "easeInOut",
+              },
+            }}
+            viewport={{
+              amount: "some",
+              once: true,
+            }}
+            className="mx-auto flex flex-col justify-center gap-[24px] xl:max-w-[550px]"
+          >
             <p className="text-left text-[38px] font-[600] leading-[110%] tracking-[-1px] text-black md:text-[45px]">
               Benchmark <span className="text-violet-500">against</span> the
               best companies
@@ -61,7 +78,7 @@ const UseCase: React.FC = () => {
               competition.
             </p>
             <PrimaryLinkButton
-              to="https://andrea-montini.lemonsqueezy.com/"
+              to="https://github.com/NabsCodes"
               target="_blank"
               ariaLabel="Get early access"
               linkClassName="w-fit"
@@ -70,8 +87,22 @@ const UseCase: React.FC = () => {
             >
               Get early access
             </PrimaryLinkButton>
-          </div>
-          <img
+          </motion.div>
+          <motion.img
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 0.8,
+                delay: 0.4,
+                ease: "easeInOut",
+              },
+            }}
+            viewport={{
+              amount: "some",
+              once: true,
+            }}
             decoding="async"
             sizes="min(100vw - 80px, 800px)"
             srcSet="https://framerusercontent.com/images/EHa5NCIzN5F4qKkMwUVwUmXw.jpg?scale-down-to=1024 985w,https://framerusercontent.com/images/EHa5NCIzN5F4qKkMwUVwUmXw.jpg 1110w"

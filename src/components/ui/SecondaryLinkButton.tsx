@@ -8,6 +8,7 @@ interface SecondaryLinkButtonProps {
   linkClassName?: string;
   spanClassName?: string;
   svgClassName?: string;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
   children: React.ReactNode;
 }
 
@@ -15,6 +16,7 @@ const SecondaryLinkButton: React.FC<SecondaryLinkButtonProps> = ({
   to,
   target,
   ariaLabel,
+  onClick,
   linkClassName = "",
   spanClassName = "",
   svgClassName = "",
@@ -22,6 +24,7 @@ const SecondaryLinkButton: React.FC<SecondaryLinkButtonProps> = ({
 }) => {
   return (
     <Link
+      onClick={onClick}
       to={to}
       target={target}
       aria-label={ariaLabel}

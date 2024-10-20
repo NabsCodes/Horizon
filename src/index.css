@@ -2,20 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes scrollLeft {
-  0% {
-    transform: translateX(0);
+@layer utilities {
+  /* Act as a border */
+  .card-wrapper {
+    @apply relative overflow-hidden rounded-[28px];
   }
-  100% {
-    transform: translateX(-50%);
-  }
-}
 
-@keyframes scrollRight {
-  0% {
-    transform: translateX(-50%);
+  /* Gradient */
+  .card-wrapper::before {
+    background: conic-gradient(
+      rgba(139, 92, 246, 0.4) 0deg,
+      rgba(139, 92, 246, 0.4) 0deg,
+      transparent 100deg
+    );
+
+    @apply animate-borderSpin absolute left-[-25%] top-[-25%] h-[150%] w-[150%] content-[''];
   }
-  100% {
-    transform: translateX(0);
+
+  /* Body */
+  .card-content {
+    @apply left-[1px] top-[1px] h-[calc(100%-2px)] w-[calc(100%-2px)] rounded-3xl bg-white;
   }
 }

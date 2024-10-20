@@ -1,12 +1,13 @@
 import Badge from "./ui/Badge";
 import IconCard from "./IconCard";
 import PrimaryLinkButton from "./ui/PrimaryLinkButton";
+import { motion } from "framer-motion";
 
 const Features = () => {
   return (
     <section
       id="features"
-      className="mx-auto max-w-8xl px-4 py-[80px] sm:px-6 lg:px-8"
+      className="mx-auto max-w-7xl px-4 py-[80px] sm:px-6 lg:px-8"
     >
       <div className="mx-auto flex max-w-[840px] flex-col justify-center">
         <h2 className="text-center text-[46px] font-[600] leading-[110%] tracking-[-1.5px] text-black">
@@ -22,7 +23,23 @@ const Features = () => {
       </div>
       {/* Feature view */}
       <div className="mt-[100px] grid grid-cols-1 gap-[80px] lg:grid-cols-2">
-        <img
+        <motion.img
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: "spring",
+              damping: 40,
+              stiffness: 160,
+              mass: 1,
+              delay: 1.5,
+            },
+          }}
+          viewport={{
+            amount: "some",
+            once: true,
+          }}
           decoding="async"
           sizes="calc(100vw - 40px)"
           srcSet="https://framerusercontent.com/images/x5U7jodM3LYs9Btx8ZgdPHosAI.jpg?scale-down-to=1024 985w,https://framerusercontent.com/images/x5U7jodM3LYs9Btx8ZgdPHosAI.jpg 1110w"
@@ -30,7 +47,23 @@ const Features = () => {
           alt="Feature view"
           className="w-full"
         />
-        <div className="flex flex-col justify-center gap-[24px]">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 0.8,
+              delay: 0.4,
+              ease: "easeInOut",
+            },
+          }}
+          viewport={{
+            amount: "some",
+            once: true,
+          }}
+          className="flex flex-col justify-center gap-[24px]"
+        >
           <Badge text="Features" className="justify-start" />
           <h3 className="text-left text-[38px] font-[600] leading-[110%] tracking-[-1px] text-black md:text-[45px]">
             <span className="text-violet-500">Uncover</span> latest trends in
@@ -60,11 +93,27 @@ const Features = () => {
               strokeColor="rgb(59,130,246)"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
       {/* Feature view */}
       <div className="mt-[100px] grid grid-cols-1 gap-[80px] lg:grid-cols-2">
-        <div className="flex flex-col justify-center gap-[24px]">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 0.8,
+              delay: 0.4,
+              ease: "easeInOut",
+            },
+          }}
+          viewport={{
+            amount: "some",
+            once: true,
+          }}
+          className="flex flex-col justify-center gap-[24px]"
+        >
           <Badge text="Features" className="justify-start" />
           <h3 className="text-left text-[38px] font-[600] leading-[110%] tracking-[-1px] text-black md:text-[45px]">
             Tailor-made <span className="text-violet-500">insights</span>, just
@@ -76,7 +125,7 @@ const Features = () => {
             matters most to your business.
           </p>
           <PrimaryLinkButton
-            to="https://andrea-montini.lemonsqueezy.com/"
+            to="https://github.com/NabsCodes"
             target="_blank"
             ariaLabel="Get early access"
             linkClassName="hidden w-fit md:flex md:space-x-0 lg:space-x-2"
@@ -84,8 +133,24 @@ const Features = () => {
           >
             Get early access
           </PrimaryLinkButton>
-        </div>
-        <img
+        </motion.div>
+        <motion.img
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: "spring",
+              damping: 40,
+              stiffness: 160,
+              mass: 1,
+              delay: 1.5,
+            },
+          }}
+          viewport={{
+            amount: "some",
+            once: true,
+          }}
           decoding="async"
           sizes="min(100vw - 80px, 800px)"
           srcSet="https://framerusercontent.com/images/KFMF6sf1OuiRyONlLoVwIw2IGo.jpg?scale-down-to=1024 985w,https://framerusercontent.com/images/KFMF6sf1OuiRyONlLoVwIw2IGo.jpg 1110w"
@@ -96,7 +161,23 @@ const Features = () => {
       </div>
       {/* Primary CTA */}
       <div className="mt-[100px] grid grid-cols-1 gap-[80px] lg:grid-cols-2">
-        <img
+        <motion.img
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: "spring",
+              damping: 40,
+              stiffness: 160,
+              mass: 1,
+              delay: 1.5,
+            },
+          }}
+          viewport={{
+            amount: "some",
+            once: true,
+          }}
           decoding="async"
           sizes="min(100vw - 80px, 800px)"
           srcSet="hhttps://framerusercontent.com/images/4aRXowVrrTMR3AIzJTT1G62ydk.jpg?scale-down-to=1024 985w,https://framerusercontent.com/images/4aRXowVrrTMR3AIzJTT1G62ydk.jpg 1110w"
@@ -104,7 +185,23 @@ const Features = () => {
           alt="Feature view"
           className="w-full"
         />
-        <div className="flex flex-col justify-center gap-[24px]">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 0.8,
+              delay: 0.4,
+              ease: "easeInOut",
+            },
+          }}
+          viewport={{
+            amount: "some",
+            once: true,
+          }}
+          className="flex flex-col justify-center gap-[24px]"
+        >
           <Badge text="Features" className="justify-start" />
           <h3 className="text-left text-[38px] font-[600] leading-[110%] tracking-[-1px] text-black md:text-[45px]">
             Stay <span className="text-violet-500">informed</span>, instantly
@@ -132,7 +229,7 @@ const Features = () => {
               strokeColor="rgb(59,130,246)"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -65,7 +65,7 @@ const Integrations: React.FC = () => {
             </div>
 
             {/* Vertical marquees for xl screens */}
-            <div className="mask-custom-gradient-vertical hidden xl:grid xl:h-[600px] xl:grid-cols-3 xl:gap-4">
+            <div className="hidden mask-custom-gradient-vertical xl:grid xl:h-[600px] xl:grid-cols-3 xl:gap-4">
               <VerticalMarquee integrations={integrations} direction="up" />
               <VerticalMarquee integrations={integrations} direction="down" />
               <VerticalMarquee integrations={integrations} direction="up" />
