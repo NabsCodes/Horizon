@@ -42,7 +42,7 @@ const Blog: React.FC = () => {
       <div className="mx-auto w-full max-w-7xl">
         <div className="mb-12 flex flex-col justify-center gap-4">
           <Badge text="Blog" />
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col items-center justify-between gap-6 md:flex-row md:gap-0">
             <motion.p
               initial={{ opacity: 0, y: 50 }}
               whileInView={{
@@ -58,14 +58,14 @@ const Blog: React.FC = () => {
                 amount: "some",
                 once: true,
               }}
-              className="text-5xl font-semibold leading-tight tracking-tight text-black md:text-[52px]"
+              className="self-start text-5xl font-semibold leading-tight tracking-tight text-black md:text-[52px]"
             >
               Read, learn, improve
             </motion.p>
             <SecondaryLinkButton
               to="#cta"
               ariaLabel="All articles"
-              linkClassName="w-fit"
+              linkClassName="md:w-fit w-full"
               svgClassName="transition-transform duration-300 ease-custom-bezier group-hover:translate-x-1"
             >
               All articles
